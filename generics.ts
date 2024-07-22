@@ -46,3 +46,21 @@ const products: Array<Products> = [
 
 ]
 const searchProductsWithInterface = searchProducts<Products>(products)
+
+// You can use multiple generics like this too.
+
+interface Database  {
+    connection: string,
+    userName: string,
+    password: string,
+}
+
+const databaseFunction = <T, U extends Database>(valueOne: T, valueTwo: U): object => {
+    return {
+        valueOne,
+        valueTwo
+    }
+}
+
+databaseFunction("testOne", {connection: "testConnection", userName: "testUserName", password: "testPw"})
+

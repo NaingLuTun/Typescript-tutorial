@@ -20,3 +20,10 @@ const products = [
     { id: 1, type: "pet foods", hasDiscount: true },
 ];
 const searchProductsWithInterface = searchProducts(products);
+const databaseFunction = (valueOne, valueTwo) => {
+    return {
+        valueOne,
+        valueTwo
+    };
+};
+databaseFunction("testOne", { connection: "testConnection", userName: "testUserName", password: "testPw" });
